@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Політика конфіденційності — Shmat: Cut the Exact Piece</title>
+    <meta
+      name="description"
+      content="Політика конфіденційності Shmat: Cut the Exact Piece — анонімний акаунт, рейтинги, реклама, аналітика, звіти про збої та видалення даних."
+    />
+    <link rel="alternate" hreflang="en" href="https://oleksandr-sokolov.github.io/shmat-pages/privacy.html" />
+    <link rel="alternate" hreflang="uk" href="https://oleksandr-sokolov.github.io/shmat-pages/uk/privacy.html" />
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="wrap page">
+      <nav class="nav">
+        <a class="brand" href="index.html"><img src="../assets/icon.svg" alt="" width="34" height="34" />Shmat</a>
+        <span class="spacer"></span>
+        <a href="index.html">Головна</a>
+        <a class="lang" href="../privacy.html" hreflang="en" lang="en">EN</a>
+      </nav>
+
+      <h1>Політика конфіденційності</h1>
+      <p class="updated">Набуває чинності: 8 жовтня 2026 року</p>
+
+      <div class="panel short" id="summary">
+        <h2>Коротко</h2>
+        <ul>
+          <li>Грати можна, не повідомляючи нам ні імені, ні email. Під час першого запуску застосунок створює <strong>анонімний акаунт</strong>.</li>
+          <li>Твій <strong>нікнейм і результати публічні</strong> в рейтингах. Нікнейм генерується автоматично, його можна змінити.</li>
+          <li>Реклама <strong>неперсоналізована</strong>. Firebase Analytics і Crashlytics допомагають нам зрозуміти, як грають, і виправляти збої.</li>
+          <li>Ми не продаємо дані. <strong>Налаштування → Видалити акаунт</strong> прибирає акаунт і твої дані з наших серверів.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Зміст</h2>
+        <ul class="toc">
+          <li><a href="#controller">Хто ми</a></li>
+          <li><a href="#account">Акаунт і вхід</a></li>
+          <li><a href="#game-data">Ігрові дані та рейтинги</a></li>
+          <li><a href="#ads">Реклама</a></li>
+          <li><a href="#analytics">Аналітика та звіти про збої</a></li>
+          <li><a href="#notifications">Сповіщення</a></li>
+          <li><a href="#device">Дані на пристрої</a></li>
+          <li><a href="#not-collected">Чого ми не збираємо</a></li>
+          <li><a href="#processors">Постачальники послуг</a></li>
+          <li><a href="#storage">Де зберігаються дані</a></li>
+          <li><a href="#retention">Скільки ми зберігаємо дані</a></li>
+          <li><a href="#rights">Правові підстави та твої права</a></li>
+          <li><a href="#delete">Видалення акаунта</a></li>
+          <li><a href="#children">Діти</a></li>
+          <li><a href="#website">Цей сайт</a></li>
+          <li><a href="#changes">Зміни</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </div>
+
+      <div class="panel" id="controller">
+        <h2>Хто ми</h2>
+        <p>
+          Shmat: Cut the Exact Piece («Shmat», «застосунок») створює
+          <strong>Олександр Соколов</strong>, незалежний розробник. Він є
+          контролером персональних даних, описаних у цій політиці. Контакт:
+          <a href="mailto:berry.raspin@gmail.com">berry.raspin@gmail.com</a>.
+        </p>
+      </div>
+
+      <div class="panel" id="account">
+        <h2>Акаунт і вхід</h2>
+        <p>
+          Під час першого запуску застосунок створює <strong>анонімний
+          акаунт</strong> у Firebase Authentication. Це випадковий ідентифікатор
+          користувача без імені та email.
+        </p>
+        <p>
+          За бажанням можна <strong>увійти через Google або Apple</strong>, щоб
+          зберегти прогрес на різних пристроях. Тоді Firebase Authentication
+          зберігає ідентифікатор акаунта та email, які повертає Google або
+          Apple. Якщо ти користуєшся функцією Apple «Сховати мій email», ми
+          отримуємо лише адресу-переадресацію, створену Apple. Ці дані
+          використовуються тільки для входу.
+        </p>
+      </div>
+
+      <div class="panel" id="game-data">
+        <h2>Ігрові дані та рейтинги</h2>
+        <p>Застосунок зберігає в Cloud Firestore, прив'язано до твого ідентифікатора:</p>
+        <ul>
+          <li><strong>нікнейм</strong>, згенерований автоматично, який можна змінити;</li>
+          <li><strong>щоденні результати</strong>: намальовану лінію розрізу, бали та час від відкриття фігури до найкращого розрізу;</li>
+          <li><strong>місячні підсумки</strong>, <strong>серію днів</strong> і <strong>найкращий результат у нескінченному режимі</strong>.</li>
+        </ul>
+        <p>
+          Ігрові запити (наприклад, надсилання розрізу) обробляють Cloud
+          Functions у Google Cloud. Твій <strong>нікнейм і результати
+          показуються публічно</strong> іншим гравцям у денному, місячному й нескінченному
+          рейтингах. Не використовуй як нікнейм справжнє ім'я чи інші
+          персональні дані.
+        </p>
+      </div>
+
+      <div class="panel" id="ads">
+        <h2>Реклама</h2>
+        <p>Застосунок показує рекламу від <strong>Google AdMob</strong>:</p>
+        <ul>
+          <li><strong>рекламу з винагородою</strong> — тільки коли ти сам вирішуєш її переглянути: +3 спроби для щоденної фігури або +1 життя в нескінченному режимі;</li>
+          <li><strong>міжсторінкову рекламу</strong> між раундами нескінченного режиму.</li>
+        </ul>
+        <p>
+          Реклама запитується як <strong>неперсоналізована</strong>, тобто не
+          на основі твого профілю. AdMob усе одно може використовувати
+          ідентифікатори пристрою, зокрема рекламний ідентифікатор, і таку
+          інформацію, як IP-адреса, для обмеження частоти показів, захисту від
+          шахрайства та вимірювання, як описано в
+          <a href="https://policies.google.com/technologies/partner-sites?hl=uk" rel="noopener">поясненні Google про використання даних із сайтів і застосунків партнерів</a>.
+        </p>
+        <p>
+          У Європейській економічній зоні та Великій Британії застосунок
+          показує форму згоди Google (User Messaging Platform) перед
+          завантаженням реклами, де цього вимагає закон.
+        </p>
+      </div>
+
+      <div class="panel" id="analytics">
+        <h2>Аналітика та звіти про збої</h2>
+        <ul>
+          <li>
+            <strong>Firebase Analytics</strong> записує події використання:
+            відкриття щоденного завдання, розріз, завершення дня, поширення
+            результату, перегляд реклами — разом з ідентифікатором встановлення
+            застосунку та базовою інформацією про пристрій (модель, версія ОС,
+            приблизна країна).
+          </li>
+          <li>
+            <strong>Firebase Crashlytics</strong> надсилає звіт, коли застосунок
+            аварійно завершується: стек викликів, модель пристрою, версію ОС та
+            ідентифікатор встановлення.
+          </li>
+        </ul>
+        <p>Ми використовуємо ці дані лише для того, щоб розуміти, як грають, і виправляти помилки.</p>
+      </div>
+
+      <div class="panel" id="notifications">
+        <h2>Сповіщення</h2>
+        <p>
+          Якщо ти дозволиш сповіщення, застосунок планує <strong>локальне
+          сповіщення</strong> на пристрої, коли готова нова фігура. Воно
+          створюється на самому пристрої; сервера push-сповіщень у нас немає, і
+          push-токен ми не збираємо.
+        </p>
+      </div>
+
+      <div class="panel" id="device">
+        <h2>Дані на пристрої</h2>
+        <p>
+          Налаштування та кешована копія поточного дня зберігаються локально
+          на пристрої. Вони видаляються разом із застосунком.
+        </p>
+      </div>
+
+      <div class="panel" id="not-collected">
+        <h2>Чого ми не збираємо</h2>
+        <p>
+          У застосунку <strong>немає платежів</strong>, і він не має доступу до
+          <strong>контактів, геолокації, мікрофона чи камери</strong>.
+        </p>
+      </div>
+
+      <div class="panel" id="processors">
+        <h2>Постачальники послуг</h2>
+        <p>Ці постачальники обробляють дані від нашого імені. На їхню обробку поширюються їхні політики:</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Постачальник</th><th>Мета</th><th>Політика</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Firebase (Authentication, Cloud Firestore, Cloud Functions)</td>
+                <td>акаунт, ігрові дані, рейтинги</td>
+                <td><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy</a></td>
+              </tr>
+              <tr>
+                <td>Google Analytics for Firebase</td>
+                <td>статистика використання</td>
+                <td><a href="https://support.google.com/analytics/answer/6004245?hl=uk" rel="noopener">Дані Google Analytics</a></td>
+              </tr>
+              <tr>
+                <td>Firebase Crashlytics</td>
+                <td>звіти про збої</td>
+                <td><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy</a></td>
+              </tr>
+              <tr>
+                <td>Google AdMob</td>
+                <td>реклама та форма згоди</td>
+                <td><a href="https://policies.google.com/privacy?hl=uk" rel="noopener">Політика конфіденційності Google</a></td>
+              </tr>
+              <tr>
+                <td>Вхід через Google</td>
+                <td>необов'язковий вхід</td>
+                <td><a href="https://policies.google.com/privacy?hl=uk" rel="noopener">Політика конфіденційності Google</a></td>
+              </tr>
+              <tr>
+                <td>Вхід через Apple</td>
+                <td>необов'язковий вхід</td>
+                <td><a href="https://www.apple.com/legal/privacy/" rel="noopener">Політика конфіденційності Apple</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="storage">
+        <h2>Де зберігаються дані</h2>
+        <p>
+          Ігрові дані в Cloud Firestore зберігаються в регіоні Google Cloud
+          <strong>europe-west1 (Бельгія)</strong>. Firebase Authentication,
+          Analytics, Crashlytics і AdMob — глобальні сервіси Google і можуть
+          обробляти дані у США та інших країнах. Для передавання даних за межі
+          ЄЕЗ і Великої Британії Google застосовує гарантії, як-от EU–U.S. Data
+          Privacy Framework і стандартні договірні положення. Дані шифруються
+          під час передавання. Ми не продаємо дані й не передаємо їх нікому,
+          крім перелічених вище постачальників.
+        </p>
+      </div>
+
+      <div class="panel" id="retention">
+        <h2>Скільки ми зберігаємо дані</h2>
+        <p>
+          Акаунт, нікнейм і результати зберігаються, <strong>поки існує
+          акаунт</strong>. Рейтинги перебудовуються з результатів, тож після
+          видалення акаунта ти зникаєш і з них. Події аналітики та звіти про
+          збої Firebase зберігає протягом своїх стандартних строків.
+        </p>
+      </div>
+
+      <div class="panel" id="rights">
+        <h2>Правові підстави та твої права</h2>
+        <p>
+          Дані акаунта та гри ми обробляємо, бо без них неможливо
+          <strong>надати гру</strong>, якою ти користуєшся (виконання договору).
+          Аналітику, звіти про збої та вимірювання реклами — на підставі
+          <strong>законного інтересу</strong> підтримувати гру робочою й
+          безкоштовною. Де закон вимагає <strong>згоди</strong> (наприклад, для
+          реклами в ЄЕЗ і Великій Британії), ми просимо її через форму згоди.
+        </p>
+        <p>
+          Відповідно до GDPR та подібних законів ти можеш вимагати
+          <strong>доступу</strong> до своїх даних, їхньої <strong>копії</strong>,
+          <strong>виправлення</strong> чи <strong>видалення</strong>, заперечити
+          проти обробки або обмежити її, а також відкликати згоду в будь-який
+          момент. Напиши нам — відповімо протягом 30 днів. Також можна подати
+          скаргу до органу із захисту даних у своїй країні.
+        </p>
+      </div>
+
+      <div class="panel" id="delete">
+        <h2>Видалення акаунта</h2>
+        <ul>
+          <li>У застосунку: <strong>Налаштування → Видалити акаунт</strong>. Це видаляє акаунт і твої дані з наших серверів. Скасувати дію неможливо.</li>
+          <li>Електронною поштою: напиши на <a href="mailto:berry.raspin@gmail.com">berry.raspin@gmail.com</a> і вкажи свій нікнейм. Щоб переконатися, що акаунт твій, ми відповімо коротким кодом і попросимо на хвилину поставити його нікнеймом у застосунку; після цього видалимо акаунт за тебе.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="children">
+        <h2>Діти</h2>
+        <p>
+          Shmat має віковий рейтинг 12+ і <strong>не призначений для дітей до
+          13 років</strong>. Ми свідомо не збираємо персональні дані дітей до 13
+          років. Якщо ти вважаєш, що дитина передала нам персональні дані,
+          напиши нам — ми їх видалимо.
+        </p>
+      </div>
+
+      <div class="panel" id="website">
+        <h2>Цей сайт</h2>
+        <p>
+          Сайт розміщено на GitHub Pages; GitHub може зберігати стандартні
+          журнали сервера, зокрема IP-адреси, відповідно до
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>.
+          Шрифт завантажується з Google Fonts, що передає твою IP-адресу Google.
+          Сайт не встановлює cookie й не має аналітики.
+        </p>
+      </div>
+
+      <div class="panel" id="changes">
+        <h2>Зміни</h2>
+        <p>
+          Якщо політика зміниться, ми оновимо її тут і змінимо дату набуття
+          чинності вгорі. У разі розбіжностей між перекладами переважає
+          англійська версія.
+        </p>
+      </div>
+
+      <div class="panel" id="contact">
+        <h2>Контакти</h2>
+        <p>
+          <strong>Розробник:</strong> Олександр Соколов<br />
+          <strong>Email:</strong> <a href="mailto:berry.raspin@gmail.com">berry.raspin@gmail.com</a>
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span>© 2026 Олександр Соколов · Shmat</span>
+        <span class="spacer"></span>
+        <a href="index.html">Головна</a>
+        <a href="mailto:berry.raspin@gmail.com">berry.raspin@gmail.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
